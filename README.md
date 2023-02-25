@@ -74,3 +74,5 @@ This feature includes cookie based authentication for requests that are initiate
 ## Sanctum
 Sanctum is an **authentication library**
 
+# laragigs
+Web app for laravel jobs
