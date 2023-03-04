@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        //  \App\Models\User::factory(5)->create();
+         \App\Models\User::factory(6)->create();
 
         Listing::create([
             'title'=>'Laravel Senior Developer',
