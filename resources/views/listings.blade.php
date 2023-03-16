@@ -1,5 +1,7 @@
-<h1> {{$heading}} </h1>
-@unless (count($listings) == 0)
+@extends('layout')
+
+@section('content')
+<h1>{{ $heading }} </h1>
     @foreach($listings as $listing)
         <h2>
             <a href="/listings/{{$listing['id']}}">
@@ -10,7 +12,7 @@
             {{$listing['description']}}
         </p>
     @endforeach
-@else
-    <p>No listings</p>
-@endunless
+
+@endsection
+
 
