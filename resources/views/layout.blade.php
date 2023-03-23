@@ -23,7 +23,7 @@
     </nav>
     {{-- Output is viewed --}}
 
-    {{-- Hero Image --}}
+    
     
     <main>
         @yield('content')

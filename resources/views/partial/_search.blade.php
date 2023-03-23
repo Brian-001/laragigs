@@ -2,6 +2,7 @@
     <div class="relative border-2 border-gray-100 m-4 rounded-lg">
         <div class="absolute top-4 left-3">
             {{-- search icon --}}
+            @svg('eos-search')
         </div>
         <input type="text" name="search" class="h-14 w-full pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none" 
         placeholder="Search Laravel Gigs...">
