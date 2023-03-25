@@ -9,6 +9,7 @@
         "codeat3/blade-eos-icons": "^1.13",
         "codeat3/blade-evil-icons": "^1.4",
         "guzzlehttp/guzzle": "^7.2",
+        "itsgoingd/clockwork": "^5.1",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",

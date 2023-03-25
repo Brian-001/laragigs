@@ -16,13 +16,6 @@ use App\Models\Listing;
 |
 */
 
-//All listings
-Route::get('/', [ListingController::class, 'index']);
-
-
-//Single Listings
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
-
 /*****Common Resource Routes*****/
 //index-This displays all listings
 //show-This displays single listing
@@ -31,3 +24,14 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 //edit -This displays a form to edit
 //update - This updates a new listing
 //destroy - This deletes listing
+
+//All listings
+Route::get('/', [ListingController::class, 'index']);
+
+//Show Create Form
+Route::get('/listings/create', [ListingController::class, 'create']);
+
+//Single Listings
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
+
