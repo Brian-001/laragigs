@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Laragigs Brayo</title>
     @vite('resources/css/app.css')
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body class="mb-48">
     <nav class="flex justify-between items-center mb-4">
@@ -34,5 +35,7 @@
         <p class="ml-2">Copyright &copy; 2022, All Rights reserverd</p>
         <a href="/listings/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Post Job</a>
     </footer>
+
+    <x-flash-message />
 </body>
 </html>

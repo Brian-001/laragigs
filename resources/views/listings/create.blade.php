@@ -6,35 +6,85 @@
             </h2>
             <p>Post a gig to find a Developer</p>
         </header>
-        <form method="POST" action="/listings">
+
+
+        <form method="POST" action="/listing">
+            @csrf
             <div class="mb-6">
                 <label for="company" class="inline-block text-lg mb-2">Company Name</label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="company" placeholder="Kenya Polysack">
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="company" 
+                placeholder="Kenya Polysack" value="{{old('company')}}">
+                @error('company')
+                   <p class="text-red-500 text-xs mt-1">
+                    {{$message}}
+                   </p>
+                @enderror
             </div>
             <div class="mb-6">
                 <label for="title" class="inline-block text-lg mb-2">Job title</label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title" placeholder="Senior Laravel Developer">
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title" 
+                placeholder="Senior Laravel Developer" value="{{old('title')}}">
+                @error('title')
+                   <p class="text-red-500 text-xs mt-1">
+                    {{$message}}
+                   </p>
+                @enderror
             </div>
             <div class="mb-6">
                 <label for="location" class="inline-block text-lg mb-2">Job location</label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="location" placeholder="Nairobi, Kenya">
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="location" 
+                placeholder="Nairobi, Kenya" value="{{old('location')}}">
+                @error('location')
+                   <p class="text-red-500 text-xs mt-1">
+                    {{$message}}
+                   </p>
+                @enderror
+            </div>
+            <div class="mb-6">
+                <label for="email" class="inline-block text-lg mb-2">Company Email</label>
+                <input type="email" class="border border-gray-200 rounded p-2 w-full" name="email" 
+                placeholder="example@domain.com" value="{{old('email')}}">
+                @error('email')
+                   <p class="text-red-500 text-xs mt-1">
+                    {{$message}}
+                   </p>
+                @enderror
             </div>
             <div class="mb-6">
                 <label for="website" class="inline-block text-lg mb-2">Website url</label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="website" placeholder="https://www.example.com">
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="website" 
+                placeholder="https://www.example.com" value="{{old('website')}}">
+                @error('website')
+                   <p class="text-red-500 text-xs mt-1">
+                    {{$message}}
+                   </p>
+                @enderror
             </div>
             <div class="mb-6">
                 <label for="tags" class="inline-block text-lg mb-2">Tags (Comma Seperated)</label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="tags" placeholder="Larvel, Postgress, NodeJs">
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="tags" 
+                placeholder="Larvel, Postgress, NodeJs" value="{{old('tags')}}">
+                @error('tags')
+                   <p class="text-red-500 text-xs mt-1">
+                    {{$message}}
+                   </p>
+                @enderror
             </div>
-            <div class="mb-6">
+            {{-- <div class="mb-6">
                 <label for="logo" class="inline-block text-lg mb-2">Company Logo</label>
                 <input type="file" class="border border-gray-200 rounded p-2 w-full" name="tags">
-            </div>
+            </div> --}}
             <div class="mb-6">
                 <label for="description" class="inline-block text-lg mb-2">Job description</label>
-                <textarea name="description" cols="30" rows="10" class="border border-gray-200 rounded p-2 w-full" placeholder="Include: tasks, requirements, salary etc">  
+                <textarea name="description" rows="10" class="border border-gray-200 rounded 
+                p-2 w-full" placeholder="Include: tasks, requirements, salary etc">
+                    {{old('description')}}  
                 </textarea>
+                @error('description')
+                   <p class="text-red-500 text-xs mt-1">
+                    {{$message}}
+                   </p>
+                @enderror
             </div>
             <div class="mb-6">
                 <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
