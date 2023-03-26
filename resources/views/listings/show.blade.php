@@ -2,7 +2,9 @@
     @include('partial._search') 
 
         <a href="/" class="inline-block text-black ml-4 mb-4">
-            Back{{ svg('bx-arrow-back') }}</a>
+            <x-bx-arrow-back />
+            Back
+        </a>
         <div class="mx-4">
             {{-- Defining more class properties is allowed by attributes in ..components/card component --}}
            <x-card class="p-10">
