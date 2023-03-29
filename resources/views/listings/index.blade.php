@@ -20,4 +20,3 @@
     </div>
 </x-layout>
 
-b:s

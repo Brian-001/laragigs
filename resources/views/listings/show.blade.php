@@ -9,7 +9,7 @@
             {{-- Defining more class properties is allowed by attributes in ..components/card component --}}
            <x-card class="p-10">
                 <div class="flex flex-col items-center justify-center text-center">
-                    <img src="{{asset('images/no-image.png')}}" alt="" class="w-48 mr-6 mb-6">
+                    <img src="{{$listing->logo ? asset('storage/'. $listing->logo) : asset('/images/no-image.png')}}" alt="" class="w-48 mr-6 mb-6">
                     <h3 class="text-2xl mb-2">
                         {{$listing->title}}
                     </h3>
@@ -36,6 +36,24 @@
                         </div>
                     </div>
                 </div>
+            </x-card>
+            <x-card class="mt-4 p-2 flex space-x-6">
+                <a href="/listings/{{$listing->id}}/edit">
+                    <div class="inline-block">
+                        <x-ei-pencil />
+                        Edit
+                    </div>
+                </a>
+
+                <form action="/listings/{{$listing->id}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="text-red-500">
+                        {{-- <x-fluentui-delete-32-o /> --}}
+                        Delete
+                    </button>
+                </form>
             </x-card> 
+
         </div>
 </x-layout>
