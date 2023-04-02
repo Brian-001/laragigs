@@ -14,12 +14,21 @@
             <img src="{{asset('images/logo.png')}}" alt="" class="w-24">
         </a>
         <ul class="flex space-x-6 mr-6 text-lg">
+            @auth
             <li>
-                <a href="register.html" class="hover:text-laravel">Register</a>
+                <span class="font-bold uppercase">Welcome{{auth()->user()->name()}}</span>
             </li>
             <li>
-                <a href="register.html" class="hover:text-laravel">Login</a>
+                <a href="/listings/manage" class="hover:text-laravel">Manage Listings</a>
             </li>
+            @else
+            <li>
+                <a href="/register" class="hover:text-laravel">Register</a>
+            </li>
+            <li>
+                <a href="/login" class="hover:text-laravel">Login</a>
+            </li>
+            @endauth
         </ul>
     </nav>
     {{-- Output is viewed --}}
