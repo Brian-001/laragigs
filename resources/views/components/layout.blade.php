@@ -15,19 +15,26 @@
         </a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
-            <li>
-                <span class="font-bold uppercase">Welcome{{auth()->user()->name()}}</span>
-            </li>
-            <li>
-                <a href="/listings/manage" class="hover:text-laravel">Manage Listings</a>
-            </li>
+                <li>
+                    <span class="font-bold uppercase">Welcome {{auth()->user()->name}}</span>
+                </li>
+                <li>
+                    <a href="/listings/manage" class="hover:text-laravel">Manage Listings</a>
+                </li>
+                <li>
+                    <form action="/logout" method="POST" class="inline">
+                        @csrf
+                        <button type="submit" class="border p-1 px-2 bg-laravel
+                        rounded-md text-white">Logout</button>
+                    </form>
+                </li>
             @else
-            <li>
-                <a href="/register" class="hover:text-laravel">Register</a>
-            </li>
-            <li>
-                <a href="/login" class="hover:text-laravel">Login</a>
-            </li>
+                <li>
+                    <a href="/register" class="hover:text-laravel">Register</a>
+                </li>
+                <li>
+                    <a href="/login" class="hover:text-laravel">Login</a>
+                </li>
             @endauth
         </ul>
     </nav>
