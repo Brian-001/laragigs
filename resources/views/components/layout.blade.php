@@ -11,7 +11,7 @@
 <body class="mb-48">
     <nav class="flex justify-between items-center mb-4">
         <a href="/">
-            <img src="{{asset('images/logo.png')}}" alt="" class="w-24">
+            <img src="{{asset('images/logo.png')}}" alt="" class="w-14">
         </a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
@@ -19,21 +19,36 @@
                     <span class="font-bold uppercase">Welcome {{auth()->user()->name}}</span>
                 </li>
                 <li>
-                    <a href="/listings/manage" class="hover:text-laravel">Manage Listings</a>
+                    <div class="inline-flex hover:text-laravel">
+                        <x-eos-settings-suggest-o class="w-6 h-6"/>
+                        <a href="/listings/manage">
+                            Manage Listings
+                        </a>
                 </li>
+                    </div>
+                    
                 <li>
                     <form action="/logout" method="POST" class="inline">
                         @csrf
-                        <button type="submit" class="border p-1 px-2 bg-laravel
-                        rounded-md text-white">Logout</button>
+                        <div class="inline-flex hover:text-laravel">
+                            <x-eos-logout class="w-6 h-6"/>
+                            <button type="submit">Logout</button>
+                        </div>
                     </form>
                 </li>
             @else
                 <li>
-                    <a href="/register" class="hover:text-laravel">Register</a>
+                    <div class="inline-flex hover:text-laravel">
+                        <x-gmdi-account-circle-o class="w-6 h-6" />
+                        <a href="/register">Register</a>
+                    </div>
                 </li>
+
                 <li>
-                    <a href="/login" class="hover:text-laravel">Login</a>
+                    <div class="inline-flex hover:text-laravel">
+                        <x-gmdi-login  class="w-6 h-6"/>
+                        <a href="/login">Login</a>
+                    </div>
                 </li>
             @endauth
         </ul>

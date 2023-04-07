@@ -43,7 +43,7 @@
                 @enderror
             </div>
             <div class="mb-6">
-                <button class="bg-cyan-500 text-white rounded py-2 px-4 hover:bg-black">
+                <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
                     Sign Up
                 </button>
             </div>
@@ -51,7 +51,7 @@
             <div class="mt-8">
                 <p>
                     Already have an Account?
-                    <a href="/login" class="text-cyan-400">Login</a>
+                    <a href="/login" class="text-laravel">Login</a>
                 </p>
             </div>
         </form>

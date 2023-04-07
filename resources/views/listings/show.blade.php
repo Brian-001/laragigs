@@ -1,10 +1,13 @@
 <x-layout>
     @include('partial._search') 
 
-        <a href="/" class="inline-block text-black ml-4 mb-4">
-            <x-bx-arrow-back />
-            Back
-        </a>
+        <div class="inline-flex ml-4">
+            <x-bx-arrow-back class="w-6 h-6" />
+            <a href="/" class="inline-block text-black font-bold">
+                Back
+            </a>
+        </div>
+        
         <div class="mx-4">
             {{-- Defining more class properties is allowed by attributes in ..components/card component --}}
            <x-card class="p-10">
@@ -17,7 +20,8 @@
 
                     <x-listing-tags :tagsCsv="$listing->tags"/>
 
-                    <div class="text-lg my-4">
+                    <div class="text-lg my-4 inline-flex items-center justify-center">
+                        <x-ei-location class="w-6 h-6" />
                         {{$listing->location}}
                     </div>
                     <div class="border border-gray-200 w-full mb-6"></div>

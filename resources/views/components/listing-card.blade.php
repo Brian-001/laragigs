@@ -9,8 +9,8 @@
             </h3>
             <div class="text-xl font-bold mb-4">{{$listing->company}}</div>
             <x-listing-tags :tagsCsv="$listing->tags"/>
-            <div class="text-lg mt-4">
-                {{-- <x-ei-location class="w-10 h-10"/>  --}}
+            <div class="text-lg mt-4 inline-flex items-center justify-center">
+                <x-ei-location class="w-6 h-6" />
                 {{$listing->location}}
                 
             </div>
