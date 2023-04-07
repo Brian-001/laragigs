@@ -56,14 +56,13 @@ Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 //Create new user
 Route::post('/users', [UserController::class, 'store']);
 
-//Logout user
-Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
-
 //Show Login form
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
 //Login User
 Route::post('users/authenticate', [UserController::class, 'authenticate']);
 
+//Logout user
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 

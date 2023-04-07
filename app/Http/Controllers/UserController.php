@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuninate\Routing\Redirector;
 
 class UserController extends Controller
 {
@@ -30,22 +31,11 @@ class UserController extends Controller
         //Login 
         auth()->login($user);
 
-        return redirect('/')->with('message', 'user created and logged in');
+        return redirect('/users/login')->with('message', 'user created, login to continue');
 
     }
 
-    //Logout user
-    public function logout(Request $request){
-        //Removes User's authentication information from user session
-        auth()->logout();
-        //
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect('/')->with('message', 'You have been logged out');
-
-    }
-
+    
     //Show user Login Form
     public function login(){
         return view('users.login');
@@ -68,4 +58,17 @@ class UserController extends Controller
         // You don't want the person to know if the email exists or the password is incorrect
         return back()->withErrors(['email'=>'Invalid Credentials'])->onlyInput('email');
     }
+
+    //Logout user
+    public function logout(Request $request){
+        //Removes User's authentication information from user session
+        auth()->logout();
+        //
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/')->with('message', 'You have been logged out');
+
+    }
+
 }
